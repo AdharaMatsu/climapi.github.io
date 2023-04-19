@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- meta datos -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Busqueda de datos">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- links -->
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1116/1116453.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- titulo -->
+    <title>Weather API</title>
+
+    <script src="FileSaver.js"></script>
+</head>
+<body><!-- Body -->
+
+<style>
+    @import url('https://fonts.googleapis.com/css2? family= Roboto:wght@300;400;700 & display=swap');
+    #form{
+        background-color: #fff;
+        box-shadow: #23fefe 1px 1px 25px 0px;
+        border: none;
+        border-radius: 15px;
+        margin-top: 50%;
+        display: flex;
+        width: 350px;
+        height: 350px;
+        
+        flex-direction: column;
+
+    }
+    /* centrar todo el contenido en el centro de la pagina */
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+        /* centrar el formulario */
+    #form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: ;
+    }
+    /* centrar el div de resultados */
+    #result{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #boton{
+        width: 100px;
+        height: 30px;
+        border-radius: 10px;
+        background-color: #ffbb00;
+        color: #fff;
+        border: none;
+        margin-top: 25px;
+        margin-bottom: 35px;
+
+    }
+    #boton:hover{
+        background-color: #04e2ab;
+        color: #ffffff;
+    }
+    label{
+        margin-top: 10px;
+    }
+    input{
+        width: 200px;
+        height: 30px;
+        border-radius: 10px;
+        border: 0.5px solid #525050;
+        padding-left: 10px;
+        color: #07916e;
+    }
+    input:focus{
+        outline: none;
+    }
+    p{
+        margin-top: 10px;
+    }
+
+
+    /* que logo quede arriba de form */
+    .logo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-top: 25px;
+        width: 300px;
+        height: 300px;
+    }
+    
+    .logo > img{
+        width: 100%;
+    }
+
+    /* footer siempre al final de la pagina */
+    footer{
+        color: #6f6d6d;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-bottom: 10px;
+        width: 300px;
+        height: 30px;
+    }
+    
+    #archivo{
+        width: 200px;
+        height: 30px;
+        border-radius: 10px;
+        border: 0.5px solid #525050;
+        padding-left: 10px;
+        color: #07916e;
+    }
+    #onedat{
+        margin-top: 25px;
+    }
+</style>
+
+    <div class="logo">
+        <img src="https://cdn.uc.assets.prezly.com/a5520632-3471-41f3-afb3-8da5a6bb36d0/" >
+    </div>
+
+    <div class="formulario">
+        <form id="form">
+            <!-- <div class="dentro"> -->
+                 <!-- formulario para solicitar ciudad, latitud, longitud, tipo de dato y fecha -->
+                <label for="city" id="onedat">Ciudad</label>
+                <input type="text" name="city" id="city">
+                <label for="lat">Latitud</label>
+                <input type="text" name="lat" id="lat">
+                <label for="lon">Longitud</label>
+                <input type="text" name="lon" id="lon">
+                <label for="date">Fecha</label>
+                <input type="date" name="date" id="date">
+                <label for="archivo">Tipo de archivo</label>
+                <select for="archivo" name="archivo" id="archivo">
+                    <option value="1">Current Weather</option>
+                    <option value="2">Forecast</option>
+                    <option value="3">Search or Autocomplete</option>
+                    <option value="4">History</option>
+                    <option value="5">Marine</option>
+                    <option value="6">Future</option>
+                    <option value="7">Time Zone</option>
+                    <option value="8">Sports</option>
+                    <option value="9">Astronomy</option>
+                    <option value="10">IP Lookup</option>
+                </select>
+                <button id="boton" type="submit">Buscar</button> <!-- Boton -->
+            <!-- </div> -->
+    </form>
+    </div>
+    <script src="/app.js"></script>
+</body>
+<!-- footer alfina de la pagina )-->
+<footer>
+    <div id="result">
+        <p>
+            © Adhara Matsumoto | 2023
+        </p>
+    </div>
+</html>
