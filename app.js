@@ -1,11 +1,14 @@
 var btn = document.getElementById('boton')
+var ip = ''
+
+getUserIP();
 
 btn.addEventListener('click', function(e) {
     e.preventDefault()
     callAPI()
 })
 
-function callAPI() {
+async function callAPI() {
     var form = document.getElementById('form')
     var formData = new FormData(form)
     var data = {}
@@ -45,7 +48,7 @@ function callAPI() {
             request = `https://api.weatherapi.com/v1/astronomy.json?key=d655185fb8434fcebcb160306232903&q=${(data.city != '' ? data.city : latLot)}&dt=${data.date}`
             break
         case '10':
-            request = `https://api.weatherapi.com/v1/ip.json?key=d655185fb8434fcebcb160306232903&q=${(data.city != '' ? data.city : latLot)}&dt=${data.date}`
+            request = `https://api.weatherapi.com/v1/ip.json?key=d655185fb8434fcebcb160306232903&q=${ip}&dt=${data.date}`
             break
     }
 
@@ -63,4 +66,14 @@ function saveResults(content) {
     var blob = new Blob([content],
         { type: "text/plain;charset=utf-8" });
     saveAs(blob, "Resultados.txt");
+}
+
+function getUserIP() {
+    fetch('http://api.ipify.org/?format=json')
+    .then(function(response) {
+        return response.json()
+    })
+    .then(function(data) {
+        ip = data.ip
+    })
 }
